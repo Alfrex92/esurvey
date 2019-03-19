@@ -23,7 +23,9 @@ const SurveyList = () => (
 export default SurveyList;
 
 const Survey = styled.li`
-  color: white;
+  a {
+    color: white;
+  }
 `;
 
 // .filter(s => s.open)
