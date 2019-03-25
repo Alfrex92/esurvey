@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { spaceS, mainColor } from "../styles/utilities/tools";
 
 // const delay = () => new Promise(done => setTimeout(done, 2000));
+// add the hoverable condition if the user votes less than 3 times
 
 const Player = ({
   voted,
@@ -24,9 +25,6 @@ const Player = ({
     <div>
       {totalVotes < 3 ? (
         <Avatar>
-          {(!surveyOpen && voted) && (
-            <AvatarLikes className="small">Likes:{likes}</AvatarLikes>
-          )}
           <AvatarImg
             onClick={surveyOpen ? onClick : null}
             on={voted}
@@ -41,6 +39,9 @@ const Player = ({
         </Avatar>
       ) : (
         <Avatar>
+          {(!surveyOpen && voted) &&
+            <AvatarLikes className="small">Likes:{likes}</AvatarLikes>
+          }
           <AvatarImg
             onClick={surveyOpen ? onClick : null}
             on={voted}
